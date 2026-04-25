@@ -10,7 +10,7 @@ public sealed class WindowsNotificationService : INotificationService
         cancellationToken.ThrowIfCancellationRequested();
 
         new ToastContentBuilder()
-            .AddText("TaskScheduler reminder!")
+            .AddHeader("reminder", "Nudging!", "reminders")
             .AddText(reminder.Message)
             .Show(toast =>
             {
