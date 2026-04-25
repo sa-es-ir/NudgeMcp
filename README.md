@@ -2,6 +2,10 @@
 
 A Windows MCP (Model Context Protocol) server that lets AI assistants schedule, list, and cancel Windows toast notifications on your behalf.
 
+<img width="591" height="274" alt="image" src="https://github.com/user-attachments/assets/91e7b863-903b-4b7c-8e69-d6fb27388159" />
+
+
+
 ## Prerequisites
 
 - Windows 10 (build 17763) or later
