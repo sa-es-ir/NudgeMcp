@@ -98,3 +98,24 @@ When a reminder fires, a Windows toast notification pops up in the bottom-right 
 - Reminders are stored **in memory**. If the server process restarts, all pending reminders are lost.
 - The server process runs in the background as long as your MCP client is open. It polls every second to check for due reminders.
 - Notifications appear as standard Windows toast notifications and expire after 24 hours if not dismissed.
+
+---
+
+## Troubleshooting
+
+### Notifications not appearing
+
+Windows can silently suppress toast notifications when **Focus Assist** is active.
+
+- **Windows 10:** Open **Settings → System → Focus Assist** and set it to **Off**, or add an exception for the app.
+- **Windows 11:** Open **Settings → System → Notifications → Do not disturb** and turn it off, or add an exception.
+
+Also check **Settings → System → Notifications** and confirm that notifications are enabled globally and that no per-app setting is blocking them.
+
+### MCP client cannot find the executable
+
+The most common cause is an incorrect path in the client configuration.
+
+- Verify that the `command` value in `claude_desktop_config.json` points to the actual `NudgeMcp.exe` produced by `dotnet publish`.
+- Use double backslashes in JSON strings, e.g. `"C:\\Users\\you\\NudgeMcp\\publish\\NudgeMcp.exe"`.
+- Confirm you ran `dotnet publish -c Release -o publish` and that the file exists at the path you specified.
