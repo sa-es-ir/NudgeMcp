@@ -1,0 +1,1 @@
+- Used a trailing newline after the last Notes bullet before the `---` separator to match the spacing pattern used between all other sections in the README.
